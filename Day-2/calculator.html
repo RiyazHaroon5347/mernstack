@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url(nula.jpg);
+            background-size: cover;
+            background-repeat:no-repeat ;
+        }
+        h1{
+            text-align: center;
+            border: 2px solid;
+        }
+        table {
+            padding: 2%;
+            align-items: center;
+            margin: auto;
+            border-radius: 20px;
+            background-color:white;
+        }
+
+        td {
+            padding: 20px;
+        }
+
+        .tagoutput {
+            width: 20 0px;
+            height: 100px;
+        }
+
+        input {
+            padding: 10px 10px;
+            background-color: gainsboro;
+        }
+
+        button {
+            padding: 10px;
+            background-color: gray;
+            color: rgb(0, 0, 0);
+            border-radius: 10px;
+            box-shadow: 3px 5px black;
+            font-size: large;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        button:hover {
+            background-color: white;
+            color: black;
+            font-weight: 700;
+            transform: translate(5px, 4px) rotate(3deg);
+        }
+        .realoutput{
+            font-size: xxx-large;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CALULATOR</h1>
+        <table border="5px">
+            <tr class="tag tagoutput">
+                <td class="tag realoutput" colspan=3"></td>
+            
+                <td><button onclick="equal();">=</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="Calc('1');">1</button></td>
+                <td><button onclick="Calc('2');">2</button></td>
+                <td><button onclick="Calc('3');">3</button></td>
+                <td><button onclick="Calc('+');">+</button></td>
+            </tr>
+                <td><button onclick="Calc('4');">4</button></td>
+                <td><button onclick="Calc('5');">5</button></td>
+                <td><button onclick="Calc('6');">6</button></td>
+                <td><button onclick="Calc('-');">-</button></td>
+            <tr>
+                <td><button onclick="Calc('7');">7</button></td>
+                <td><button onclick="Calc('8');">8</button></td>
+                <td><button onclick="Calc('9');">9</button></td>
+                <td><button onclick="Calc('*');">x</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="ca('c');">C</button></td>
+                <td><button onclick="Calc('0');">0</button></td>
+                <td><button onclick="Calc('.');">.</button></td>
+                <td><button onclick="Calc('/');">/</button></td>
+            </tr>
+        </table>
+    <script>
+        let  r = '';
+        function ca(){
+            document.querySelector(".realoutput").innerHTML='';
+        }
+        function Calc(selection) {
+            document.querySelector(".realoutput").innerHTML += selection;
+            r += selection;
+        }
+
+        function equal() {
+            document.querySelector(".realoutput").innerHTML = eval(r);
+        }
+    </script>
+</body>
+
+</html>
