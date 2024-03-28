@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url(sunset.jpg);
+        }
+        .formin{
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        input{
+            padding: 5px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        input[type=button]{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin-left: 20px;
+            padding: 15px;
+            width: 80px;
+        }
+        input[type=button]:hover{
+            width: 85px;
+            height: 50px;
+        }
+        table{
+            margin: auto;
+            padding: 1px;
+            margin-top: 10px;
+            width: 400px;
+            border-radius: 7px;
+        }
+        th{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        td{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+        }
+        
+    </style>
+</head>
+<body>
+        <form id="form1" name="form1">
+        <div class="formin">
+            Department:<input type="text" name="" id="dept"><br>
+            Aspiration:<input type="text" name="" id="aspi"><br>
+            Project Plans:<input type="text" name="" id="prp"><br>
+        </div>
+            <input type="button" name="add" value="Add" id="" onclick="append();">
+                <table id="table1" border="5px" >
+                    <thead>
+                        <th>Department</th>
+                        <th>Aspiration</th>
+                        <th>Project Plans</th>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+        </form>
+    <script>
+        function append(){
+            var dep= document.form1.dept.value;
+            var asp= document.form1.aspi.value;
+            var pp= document.form1.prp.value;
+            
+            var tr = document.createElement('tr');
+
+            var td1 = tr.appendChild(document.createElement('td'));
+            var td2 = tr.appendChild(document.createElement('td'));
+            var td3 = tr.appendChild(document.createElement('td'));
+
+            td1.innerHTML=dep;
+            td2.innerHTML=asp;
+            td3.innerHTML=pp;
+
+            document.getElementById("table1").appendChild(tr);
+        }
+    </script>
+</body>
+</html>
